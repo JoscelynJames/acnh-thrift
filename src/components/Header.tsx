@@ -6,9 +6,11 @@ import {
   EuiHeaderSection,
   EuiHeaderSectionItem,
   EuiHeaderLogo,
+  EuiAvatar,
 } from '@elastic/eui';
 
 import acnhLogo from '../assets/images/acnhThriftLogo.png'
+import avatar from '../assets/images/stiches.png'
 
 interface Breadcrumb {
   text: string // text that will appear as the breadcrumb
@@ -17,12 +19,16 @@ interface Breadcrumb {
 }
 
 export default (props: {
-  breadcrumbs: [Breadcrumb?]
-} = { breadcrumbs: []}) => {
+  breadcrumbs?: [Breadcrumb]
+  isLoggedIn: boolean
+} = { isLoggedIn: false }) => {
   const styles = {
     logo: {
       height: '30px',
       margin: '10px',
+    },
+    avatar: {
+      padding: '0 10px',
     }
   }
 
@@ -30,10 +36,11 @@ export default (props: {
     <EuiHeader>
       <EuiHeaderSection grow={false}>
         <EuiHeaderSectionItem border="right">
-        <img
-          src={acnhLogo}
-          style={styles.logo}
-        />
+        <EuiHeaderLogo
+            iconType={acnhLogo}
+            href="/user/dashboard"
+            aria-label="Go to dashboard"
+          />
         </EuiHeaderSectionItem>
       </EuiHeaderSection>
 
@@ -41,13 +48,18 @@ export default (props: {
 
       <EuiHeaderSection side="right">
         <EuiHeaderSectionItem border="left">
-          <EuiHeaderLogo
+          { props.isLoggedIn
+          ? <div style={styles.avatar}>
+              <EuiAvatar imageUrl={avatar} name="Alice Goldfuss" size="m"/>
+            </div>
+          : <EuiHeaderLogo
             iconType="user"
             href="/user/dashboard"
             aria-label="Go to dashboard"
           />
-        </EuiHeaderSectionItem>
-      </EuiHeaderSection>
+          }
+          </EuiHeaderSectionItem>
+          </EuiHeaderSection>
     </EuiHeader>
   );
 };
