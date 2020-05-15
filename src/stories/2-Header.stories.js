@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header.tsx';
+import Header from '../components/organisms/Header.tsx';
 import '../../node_modules/@elastic/eui/dist/eui_theme_light.min.css';
 
 export default {

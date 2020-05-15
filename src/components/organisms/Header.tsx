@@ -9,8 +9,8 @@ import {
   EuiAvatar,
 } from '@elastic/eui';
 
-import acnhLogo from '../assets/images/acnhThriftLogo.png'
-import avatar from '../assets/images/stiches.png'
+import acnhLogo from '../../assets/images/acnhThriftLogo.png'
+import avatar from '../../assets/images/stiches.png'
 
 interface Breadcrumb {
   text: string // text that will appear as the breadcrumb
