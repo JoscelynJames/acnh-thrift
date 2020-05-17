@@ -1,0 +1,51 @@
+.contentContainer {
+  position: absolute;
+  top: 5%;
+  width: 60%;
+  height: 80%;
+  left: 20%;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.slideInLeftStart {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.slideOutStart {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.slideOutLeft {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.slideOut {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.slideInLeftStart {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+
+.slideInStart {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.slideInLeft {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.slideIn {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+
+.transitionPath {
+  transition: all .3s;
+}
